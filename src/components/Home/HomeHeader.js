@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function HomeHeader() {
-  return <div>homeheader</div>;
+  return (
+  <div className='main-container'>
+    Header 
+  </div>
+  );
 }
