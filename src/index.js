@@ -1,8 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import WebFont from 'webfontloader';
 import App from "./App";
 import "./scss/main.scss";
 import * as serviceWorker from "./serviceWorker";
+
+WebFont.load({
+  google: {
+    families: ['Merriweather', 'Open Sans']
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
