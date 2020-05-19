@@ -1,5 +1,10 @@
 import React from "react";
+import {Link} from "react-scroll";
 
 export default function Navigation() {
-  return <div>Nawigacja</div>;
+  return (
+    <>
+      <Link to='contact'>Contact</Link>
+    </>
+  )
 }
