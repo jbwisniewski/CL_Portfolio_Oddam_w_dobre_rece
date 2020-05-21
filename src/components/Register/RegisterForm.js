@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 export default function RegisterForm() {
 
@@ -13,16 +14,21 @@ export default function RegisterForm() {
     const handlePassCheck = (e) =>{
         e.preventDefault();
     }
+    const handleFormSubmit = (e)=>{
+        e.preventDefault();
+    }
 
     return (
         <div >
             <form action='' method='post' className='register_form'>
-                <label for='email'>Email</label>
+                <label htmlFor='email'>Email</label>
                 <input type='text' id='RegisterEmail' value='' onChange={handleEmail}/>
-                <label for='RegisterPassword'>Hasło</label>
+                <label htmlFor='RegisterPassword'>Hasło</label>
                 <input type='password' id='RegisterPassword' value='' onChange={handlePass}/>
-                <label for='RegisterPassCheck'>Powtórz Hasło</label>
+                <label htmlFor='RegisterPassCheck'>Powtórz Hasło</label>
                 <input type='password' id='RegisterPassCheck' value='' onChange={handlePassCheck}/>
+                <NavLink to='login' className='login__navigation-link'>Login</NavLink>
+                <input type='submit' id='RegisterSubmit' value='Załóż konto' onClick={handleFormSubmit}/>  
             </form>
         </div>
     )

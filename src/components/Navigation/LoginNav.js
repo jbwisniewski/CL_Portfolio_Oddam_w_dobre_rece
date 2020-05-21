@@ -3,8 +3,8 @@ import {NavLink} from 'react-router-dom';
 export default function LoginNav() {
     return (
         <>
-            <NavLink to='login' className='link'>Login react router link</NavLink>
-            <NavLink to='register' className='link'>Register react router link</NavLink>
+            <NavLink to='login' className='login__navigation-link'>Login</NavLink>
+            <NavLink to='register' className='login__navigation-link'>Register</NavLink>
         </>
     )
 }
