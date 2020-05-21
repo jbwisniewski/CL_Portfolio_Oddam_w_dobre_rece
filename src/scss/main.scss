@@ -1,6 +1,6 @@
+// generic - reset
 @import "./generic/reset";
+//settings - fonts, colors
 @import "./settings/all";
-
-body {
-  font-family: $font-base;
-}
+//elements
+@import "./elements/all";

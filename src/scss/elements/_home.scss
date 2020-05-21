@@ -1,0 +1,18 @@
+.main-container {
+  width: 400px;
+  height: 200px;
+  border: 3px solid red;
+}
+.font-tester{
+  font-family: $font-alt;
+  font-weight: 800;
+}
+.font-tester2{
+  font-family: $font-base;
+  font-weight: 600;
+}
+.link{
+  height: 120px;
+  display: inline-block;
+  border: 2px dotted green;
+}
