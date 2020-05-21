@@ -1,16 +1,19 @@
 import React from "react";
+import HomeWhoIs from "./HomeWhoIs";
+import HomeFooter from "./HomeFooter";
+import Navigation from '../Navigation/Navigation';
 import HomeHeader from "./HomeHeader";
-import HomeMainSection from "./HomeMainSection";
+import HomeContact from "./HomeContact";
 import HomeThreeCols from "./HomeThreeCols";
 import HomeFourSteps from "./HomeFourSteps";
-import HomeWhoIs from "./HomeWhoIs";
 import HomeWhoWeHelp from "./HomeWhoWeHelp";
-import HomeContact from "./HomeContact";
-import HomeFooter from "./HomeFooter";
+import HomeMainSection from "./HomeMainSection";
+
 
 export default function Home() {
   return (
     <>
+      <Navigation/>
       <HomeHeader />
       <HomeMainSection />
       <HomeThreeCols />
