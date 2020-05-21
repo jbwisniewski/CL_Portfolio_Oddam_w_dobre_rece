@@ -15,16 +15,16 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/oddaj-rzeczy">
+          <Route exact path="/giveaway">
             <Form />
           </Route>
-          <Route exact path="/logowanie">
+          <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/rejestracja">
+          <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/wylogowano">
+          <Route exact path="/logout">
             <Logout />
           </Route>
         </Switch>
