@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
  
 import * as ROUTES from '../../constants/routes';
  
-const LoginNav = () => (
+const Navigation = () => (
   <div>
     <ul>
       <li>
@@ -25,4 +25,4 @@ const LoginNav = () => (
   </div>
 );
  
-export default LoginNav;
+export default Navigation;

@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import WebFont from 'webfontloader';
-import App from "./App";
+import App from "./components/App";
+import Firebase, {FirebaseContext} from './components/Firebase';
 import "./scss/main.scss";
 import * as serviceWorker from "./serviceWorker";
 
@@ -12,9 +13,9 @@ WebFont.load({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <FirebaseContext.Provider value={new Firebase()}>
     <App />
-  </React.StrictMode>,
+  </FirebaseContext.Provider>,
   document.getElementById("root")
 );
 
