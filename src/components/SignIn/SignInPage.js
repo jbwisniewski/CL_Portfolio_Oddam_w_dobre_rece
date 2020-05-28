@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
  
+import { SignUpLink } from '../SignUp';
+import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
  
-const PasswordForgetPage = () => (
+const SignInPage = () => (
   <div>
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
+    <h1>SignIn</h1>
+    <SignInForm />
+    <PasswordForgetLink />
+    <SignUpLink />
   </div>
 );
  
 const INITIAL_STATE = {
   email: '',
+  password: '',
   error: null,
 };
  
-class PasswordForgetFormBase extends Component {
+class SignInFormBase extends Component {
   constructor(props) {
     super(props);
  
@@ -24,12 +30,13 @@ class PasswordForgetFormBase extends Component {
   }
  
   onSubmit = event => {
-    const { email } = this.state;
+    const { email, password } = this.state;
  
     this.props.firebase
-      .doPasswordReset(email)
+      .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
+        this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
         this.setState({ error });
@@ -43,21 +50,28 @@ class PasswordForgetFormBase extends Component {
   };
  
   render() {
-    const { email, error } = this.state;
+    const { email, password, error } = this.state;
  
-    const isInvalid = email === '';
+    const isInvalid = password === '' || email === '';
  
     return (
       <form onSubmit={this.onSubmit}>
         <input
           name="email"
-          value={this.state.email}
+          value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
+        <input
+          name="password"
+          value={password}
+          onChange={this.onChange}
+          type="password"
+          placeholder="Password"
+        />
         <button disabled={isInvalid} type="submit">
-          Reset My Password
+          Sign In
         </button>
  
         {error && <p>{error.message}</p>}
@@ -66,14 +80,11 @@ class PasswordForgetFormBase extends Component {
   }
 }
  
-const PasswordForgetLink = () => (
-  <p>
-    <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
-  </p>
-);
+const SignInForm = compose(
+  withRouter,
+  withFirebase,
+)(SignInFormBase);
  
-export default PasswordForgetPage;
+export default SignInPage;
  
-const PasswordForgetForm = withFirebase(PasswordForgetFormBase);
- 
-export { PasswordForgetForm, PasswordForgetLink };
+export { SignInForm };
