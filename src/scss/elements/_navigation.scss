@@ -1,3 +1,5 @@
-.page__navigation-link{
-    border: 1px solid blue;
+.page {
+    &__navigation-link{
+        border: 1px solid blue;
+    }
 }
