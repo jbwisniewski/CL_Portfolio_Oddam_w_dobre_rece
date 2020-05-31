@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import HomePage from '../Home';
+import Home from '../Home';
 import AdminPage from '../Admin';
 import SignInPage from '../SignIn';
 import SignUpPage from '../SignUp';
@@ -27,7 +27,7 @@ const App = () => (
           path={ROUTES.PASSWORD_FORGET}
           component={PasswordForgetPage}
         />
-        <Route path={ROUTES.HOME} component={HomePage} />
+        <Route path={ROUTES.HOME} component={Home} />
         <Route path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route path={ROUTES.ADMIN} component={AdminPage} />
       </div>

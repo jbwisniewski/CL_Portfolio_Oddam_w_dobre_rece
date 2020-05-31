@@ -1,7 +1,8 @@
 import React from "react";
+import { withAuthorization } from '../Session';
+
 import HomeWhoIs from "./HomeWhoIs";
 import HomeFooter from "./HomeFooter";
-import Navigation from '../Navigation/Navigation';
 import HomeHeader from "./HomeHeader";
 import HomeContact from "./HomeContact";
 import HomeThreeCols from "./HomeThreeCols";
@@ -10,13 +11,12 @@ import HomeWhoWeHelp from "./HomeWhoWeHelp";
 import HomeMainSection from "./HomeMainSection";
 
 
-export default function Home() {
+const HomePage = () => {
   return (
     <>
-      <Navigation/>
       <HomeHeader />
-      <HomeMainSection />
       <HomeThreeCols />
+      <HomeMainSection />
       <HomeFourSteps />
       <HomeWhoIs />
       <HomeWhoWeHelp />
@@ -25,3 +25,5 @@ export default function Home() {
     </>
   );
 }
+const condition = authUser => !!authUser;
+export default withAuthorization(condition)(HomePage);
