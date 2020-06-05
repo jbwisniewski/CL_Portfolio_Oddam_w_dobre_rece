@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function HomeThreeCols() {
     return (
-        <div className='main-container home__three'>
+        <div className='main-container home__three' id='threecolumns'>
             <div className='home__three-column'>
                 <h2 className='home__three-column-number'>
                     10

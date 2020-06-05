@@ -1,0 +1,30 @@
+.home__header{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50vw;
+    max-height: 800px;
+
+    &-image{
+        width: 50%;
+        overflow: hidden;
+        position: relative;
+        img{
+            position: absolute;
+            right: 0px;
+        }
+    }
+
+    &-intro{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        &-title{
+            text-align: center;
+            font-size: 38px;
+        }
+    }
+}
